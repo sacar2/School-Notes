@@ -5,7 +5,6 @@
 - [01: Intro to Computer Graphics](#01:-intro-to-computer-graphics)
 	- [Setting Up in XCode](#setting-up-in-xcode)
 - [02: OpenGL Basics](#02-openGL-basics)
-	- [Basic Commands](#basic-commands)
 - [03: Bresenham's Algorithms](#03:-bresenham's-algorithms)
 - [04: Geometric Transformations](#04-geometric-transformations)
 - [05: Viewing and Projections](#05-viewing-projections)
