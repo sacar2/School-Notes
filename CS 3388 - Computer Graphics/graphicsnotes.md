@@ -25,8 +25,10 @@
 
 #01: Intro to Computer Graphics
 
-![Computer Grapgics vs Vision](/cgvscv.png)
+![Computer Grapgics vs Vision](cgvscv.png)
+
 **Computer Vision**: understanding image content (by creating models)
+
 **Computer Graphics**: Creating an image from scratch (using a computer model)
 
 ##Setting Up in XCode
@@ -68,7 +70,6 @@ Done!
 - Industry Standard (ArchitectureReview Board steers it)
 - Extensible
 - Can be called as an API
-![Open GL Interface Diagram](OpenGLInterface.png)
 
 ![OpenGL Pipeline](OpenGLPipeline.png)
 
@@ -80,15 +81,14 @@ Done!
 - Shading
 - Texture Mapping
 
-##libraries
+##Libraries
 - GL: fundamental
 - GLU: utility library (high level routines)
 - GLUT: utility toolkit (open a window, get input, etc.)
 
 ##Data Types
 ![OpenGL Data Types](dataTypes.png)
-![OpenGL Primitives List](primitives1.png)
-![OpenGL Primitives Images](primitives2.png)
+![OpenGL Primitives List](primitives.png)
 
 ##Syntax
 ![OpenGL Function Format](functionFormat.png)
@@ -100,17 +100,37 @@ Done!
     - **letter** {i, f , d, ub} for data type of the arguments (e.g. 'glRectf()')
     - **v** if argument is a vector (array) (e.g.glVertex3fv())
 - 'glColor' sets colours:
-    - RGB or RGBA in floating pt i.e.:
-    '''
+    - RGB or RGBA in floating pt(0-1) & unsigned byte(0-255) i.e.:
+    '''c++
     glColor3f(0.0,0.5,1.0);
-    
+    //(0% Red, 50% Green, 100% Blue)
     glColor4f(0.0,0.5,1.0,0.3);
-    
+    //(0% Red, 50% Green, 100% Blue, 30% opacity)
     GLfloat color[4] = {0.0,0.5,1.0,0.3};
     glColor4fv(color);
+    //(0% Red, 50% Green, 100% Blue, 30% opacity)
+
+    glColor3ub(0,127,255);
+    //(0% Red, 50% Green, 100% Blue)
+    glColor4f(0,127,255,76);
+    //(0% Red, 50% Green, 100% Blue, 30% opacity)
+    GLubyte color[4] = {0,127,255,76};
+    glColor4ubv(color);
+    //(0% Red, 50% Green, 100% Blue, 30% opacity)
     '''
+- 'glClearColor(0,0,1.0,1.0)' sets background color - always in FLOATING POINT
+- 'glClear(GL COLOR BUFFER BIT);' at thetop of display() function to reset the colour buffer 
 
 ##Input-Output
+![getting started](io.png)
+- Keyboard Input =  glutKeyboardFunc(keyboard) Ex: 'keyboard(unsigned char key, int x, int y);'
+- Mouse input = glutMouseFunc(mouse) Ex: 'mouse(int button, int state, int mousex, int mousey);'
+
+###Points
+- 2D: 'glVertex2f(1.0, 2.0);'
+- 2D: 'glVertex2i(4, -1);'
+- 3D: 'glVertex3f(10, 20, 30);'
+* 'glVertex\*()' must be within glBegin(constant) and glEnd() commands *
 
 ##Projection
 
