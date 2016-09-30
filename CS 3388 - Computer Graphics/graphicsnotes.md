@@ -181,6 +181,27 @@ TODO:
 ##Transformation
 Verticies rotated and translated into place
 
+- Transformation calls in OpenGL multiply a matrix which represents the transformation into the current OpenGL state then save and restore the modelview matrix state 
+- must do int eh following order!!!
+
+Translation: moves the origin of the coordinate system:
+x0 =x + tx , 
+y0 = y + ty , 
+z0 = z + tz
+glTranslatef(tx,ty,tz);
+Rotation: rotates by angle θ (in degrees) about an axis direction
+(x,y,z)
+glRotatef(theta,x,y,z);
+glRotatef(30.0, 0.0, 1.0, 0.0) rotates by 30 degree about y-axis
+Scaling: multiply coordinates by scale factor s
+x0 = sx ∗ x, 
+y0 = sy ∗ y, 
+z0 = sz ∗ z
+glScalef(sx,sy,sz);
+The order of transform is important!
+
+
+
 ###Projection Transformation
 - determines what the camera sees and how it sees the world
 - defines point/vertex transformation from world space(what you're modelling) to 2D plane/screen
@@ -191,7 +212,10 @@ Verticies rotated and translated into place
 
 ###modelview Transformation
 - concerned w/ camera/object position and orientation
-- also a 4x4 matrix
+- Transformation calls in OpenGL multiply a 4x4 matrix which represents the transformation into the current OpenGL state
+- **glPushMatrix()** saves the modelview state pushes the current matrix on to a stack, duplicating the current matrix. That is, after a glPushMatrix call, the matrix on top of the stack is identical to the one below it
+- **glPopMatrix()** restores the modelview state pops the current matrix stack, replacing the current matrix with the one below it on the stack
+![Modelview Transformations](modelviewtransformations.png)
 
 ##Projection
 projection of verticies onto the image plane are calculated
@@ -217,7 +241,7 @@ Camera is at 10 on x-axis, looking at the origin, coincident with the positive z
 3. set the modelview transformation
 - Set the projection/modelview modes transformation state to default ’no transformation’ state.
 - Change between the projection and modelview states
-- `glMatrixMode(GL PROJECTION) ; glLoadIdentity();` to set the projection transformation default
+- Default projection View transformation: `glMatrixMode(GL PROJECTION) ; glLoadIdentity();`
     - equivalent to    `glMatrixMode(GL PROJECTION) ; glOrtho(-1,1, -1,1, 1,1) ;`
     - EX: 
     ```c++
@@ -225,7 +249,7 @@ Camera is at 10 on x-axis, looking at the origin, coincident with the positive z
     glLoadIdentity() ;
     gluPerspective(45,1,5,100) ;
     ```
-- `glMatrixMode(GL MODELVIEW) ; glLoadIdentity() ;` to set the modelview transformation default
+- default modelview transformation: `glMatrixMode(GL MODELVIEW) ; glLoadIdentity() ;`
     - equivalent to    `glMatrixMode(GL MODELVIEW) ; gluLookAt(0,0,0, 0,0,-1, 0,1,0) ;`
     - EX:
     ```c++
