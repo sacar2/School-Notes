@@ -13,6 +13,10 @@
     - [Clipping](#clipping)
     - [Camera metaphor](#camera-metaphor)
 - [03: Bresenham's Algorithms](#03:-bresenham's-algorithms)
+    - [Rasterization](#rasterization)
+    - [Bresenham’s line drawing algorithm](#bresenham’s-line-drawing-algorithm)
+    - [Slope issues](#slope-issues)
+    - [Bresenham’s circle drawing algorithm](#bresenham’s-circle-drawing-algorithm)
 - [04: Geometric Transformations](#04-geometric-transformations)
 - [05: Viewing and Projections](#05-viewing-projections)
 - [06: Clipping](#06-clipping)
@@ -273,14 +277,24 @@ gluLookAt(0,0,10, 0,0,-1, 0,1,0) ;
 }
 ```
 
-
-
-
 ##Clipping
 Vertices outside the image plane are clipped away
 
-
 #03: Bresenham's Algorithms
+##Rasterization
+    - vector data to rasters(pixel/dot format)
+    - **scan conversion** figures out what pixels to shade to represent the shapes you desire to draw
+
+##Bresenham’s line drawing algorithm
+- basically what it does is ∆y = m∆x
+![Line drawing algorithm idea](bresenhamslinealgorithm.png)
+![Bresenham's line drawing algorithm](lineAlgorithm.png)
+![drawing a line](linedrawing.png)
+![Bresenham's line drawing algorithm](algorithm.png)
+
+##Slope issues
+##Bresenham’s circle drawing algorithm
+
 #04: Geometric Transformations
 #05: Viewing and Projections
 #06: Clipping
