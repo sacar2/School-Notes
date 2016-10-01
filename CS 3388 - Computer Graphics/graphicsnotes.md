@@ -292,8 +292,8 @@ Vertices outside the image plane are clipped away
 ![drawing a line](linedrawing.png)
 ![Bresenham's line drawing algorithm](algorithm.png)
 
-##Slope issues
 ##Bresenham’s circle drawing algorithm
+![Bresenham's circle drawing algorithm](circlealgorithm.png)
 
 #04: Geometric Transformations
 #05: Viewing and Projections
