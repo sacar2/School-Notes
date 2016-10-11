@@ -7,9 +7,9 @@
 * [04: Geometric Transformations](04_geometric_transformations.md)
 * [05: Viewing and Projections](05_viewing_and_projections.md)
 * [06: Clipping](06_clipping.md)
-* 07: Mesh Data Structures
+* [07: Mesh Data Structures](07_mesh_data_structures.md)
 * 08: Curve and Surface Design
 * 09: Lightning Models
 * 10: Ray Tracing
-* #11: Fractals
+* 11: Fractals
 
