@@ -112,45 +112,53 @@ glEnd() ;
 
 - `glBegin(constant)` expects a certain ordering of vertices to produce the expected result (POLYGON verticies are counter clockwise)
 ##Camera metaphor
-Imagine that OpenGL has a (virtual) camera which is taking a picture of the (virtual) world. You have to choose what part of the world is seen, and how the camera sees the world.
-TODO:
-- specify camera position and orientation
-- specify position and oritention of objects camera will see
+ Imagine that OpenGL has a (virtual) camera which is taking a picture of the (virtual) world. You have to choose what part of the world is seen, and how the camera sees the world.
+
+**TODO:**
+
+- Specify camera position and orientation
+- Specify position and oritention of objects camera will see
 
 ##Transformation
-Verticies rotated and translated into place
+Vertices rotated and translated into place
 
 - Transformation calls in OpenGL multiply a matrix which represents the transformation into the current OpenGL state then save and restore the modelview matrix state 
-- must do int eh following order!!!
+- Must do int eh following order!!!
 
-Translation: moves the origin of the coordinate system:
+**Translation**: moves the origin of the coordinate system:
+```
 x0 =x + tx , 
 y0 = y + ty , 
 z0 = z + tz
 glTranslatef(tx,ty,tz);
-Rotation: rotates by angle θ (in degrees) about an axis direction
+```
+**Rotation**: rotates by angle θ (in degrees) about an axis direction
 (x,y,z)
+```
 glRotatef(theta,x,y,z);
 glRotatef(30.0, 0.0, 1.0, 0.0) rotates by 30 degree about y-axis
-Scaling: multiply coordinates by scale factor s
+```
+**Scaling**: multiply coordinates by scale factor s
+```
 x0 = sx ∗ x, 
 y0 = sy ∗ y, 
 z0 = sz ∗ z
 glScalef(sx,sy,sz);
+```
 The order of transform is important!
 
 
 
 ###Projection Transformation
-- determines what the camera sees and how it sees the world
-- defines point/vertex transformation from world space(what you're modelling) to 2D plane/screen
-    - world coordinate numbers(vertices) are UNITLESS i.e. `glVertex2i(2,3)` purposely has no units!
-- projection transform is represented in a 4x4 matrix, and supports **Orthographic** and **Perspeective** transformations
+- Determines what the camera sees and how it sees the world
+- Defines point/vertex transformation from world space(what you're modelling) to 2D plane/screen
+    - World coordinate numbers(vertices) are UNITLESS i.e. `glVertex2i(2,3)` purposely has no units!
+- Projection transform represented by a 4x4 matrix, and supports **Orthographic** and **Perspective** transformations
 - when `glOrtho()` `gluPerspective()` or `glFrustum` is executed a matrix which produces a projection transformation for the requested viewing volume is generated, then multiplied into the current OpenGL state
 ![transformationviews](transformationviews.png)
 
 ###modelview Transformation
-- concerned w/ camera/object position and orientation
+- Concerned w/ camera/object position and orientation
 - Transformation calls in OpenGL multiply a 4x4 matrix which represents the transformation into the current OpenGL state
 - **glPushMatrix()** saves the modelview state pushes the current matrix on to a stack, duplicating the current matrix. That is, after a glPushMatrix call, the matrix on top of the stack is identical to the one below it
 - **glPopMatrix()** restores the modelview state pops the current matrix stack, replacing the current matrix with the one below it on the stack
@@ -165,38 +173,39 @@ Orthograohic Projection points are projected FORWARD along z axis onto plane z=0
 ###Viewing
 **Viewport**: rectangular area of window where OpenGL draws, in pixels
 `glViewport(lowerX, lowerY, width, height)`
-usually put into glutReshapeFunc();
+Usually put into glutReshapeFunc();
 
 !(glulookat camera/viewing matrix](glulookat)
 
 EX 1: `void gluLookAt( 0,0,-5, 0,0,0, 0,1,0 ) ;`
-Camera is at -5 on z-axis, looking at the origin, coincident with the positive y-axis
+ Camera is at -5 on z-axis, looking at the origin, coincident with the positive y-axis
+
 EX 2: `void gluLookAt( 10,0,0, 0,0,0, 0,0,1 ) ;`
-Camera is at 10 on x-axis, looking at the origin, coincident with the positive z-axis
+ Camera is at 10 on x-axis, looking at the origin, coincident with the positive z-axis
 
 ####To Specify a View
-1. set the viewport
-2. set the projection Transformation
-3. set the modelview transformation
+1. Set the viewport
+2. Set the projection Transformation
+3. Set the modelview transformation
 - Set the projection/modelview modes transformation state to default ’no transformation’ state.
 - Change between the projection and modelview states
 - Default projection View transformation: `glMatrixMode(GL PROJECTION) ; glLoadIdentity();`
-    - equivalent to    `glMatrixMode(GL PROJECTION) ; glOrtho(-1,1, -1,1, 1,1) ;`
+    - Equivalent to    `glMatrixMode(GL PROJECTION) ; glOrtho(-1,1, -1,1, 1,1) ;`
     - EX: 
     ```c++
     glMatrixMode(GL PROJECTION) ;
     glLoadIdentity() ;
     gluPerspective(45,1,5,100) ;
     ```
-- default modelview transformation: `glMatrixMode(GL MODELVIEW) ; glLoadIdentity() ;`
-    - equivalent to    `glMatrixMode(GL MODELVIEW) ; gluLookAt(0,0,0, 0,0,-1, 0,1,0) ;`
+- Default modelview transformation: `glMatrixMode(GL MODELVIEW) ; glLoadIdentity() ;`
+    - Equivalent to    `glMatrixMode(GL MODELVIEW) ; gluLookAt(0,0,0, 0,0,-1, 0,1,0) ;`
     - EX:
     ```c++
     glMatrixMode(GL MODELVIEW) ;
     glLoadIdentity() ;
     gluLookAt(0,0,0, 0,0,-1, 0,1,0) ;
     ```
-- `glLoadIdentity();` sets transformation to the identity matrix (default state)
+- `glLoadIdentity();` Sets transformation to the identity matrix (default state)
 
 
 Using both projection and modelview transformations in a single example:
@@ -213,4 +222,4 @@ gluLookAt(0,0,10, 0,0,-1, 0,1,0) ;
 ```
 
 ##Clipping
-Vertices outside the image plane are clipped away
+Vertices outside the image plane are clipped
