@@ -1,7 +1,7 @@
 # Summary
 
-* 01: Intro to Computer Graphics
+* [Introduction](README.md)
+* [01: Intro to Computer Graphics](01_intro_to_computer_graphics.md)
 * 02: openGL Basics
 * 03: Bresenham's Algorithms
-* 
 
