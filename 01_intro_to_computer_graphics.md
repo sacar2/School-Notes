@@ -9,7 +9,7 @@
 ##Table of Contents
 
 - [01: Intro to Computer Graphics](#01:-intro-to-computer-graphics)
-	- [Setting Up in XCode](#setting-up-in-xcode)
+    - [Setting Up in XCode](#setting-up-in-xcode)
 - [02: OpenGL Basics](#02-openGL-basics)
     - [Functionalities](#functionalities)
     - [Data Types](#data-types)
