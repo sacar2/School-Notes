@@ -9,5 +9,6 @@
 * [06: Clipping](06_clipping.md)
 * 07: Mesh Data Structures
 * 08: Curve and Surface Design
-* #09: Lightning Models
+* 09: Lightning Models
+* #10: Ray Tracing
 
