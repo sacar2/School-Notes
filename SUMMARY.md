@@ -10,5 +10,6 @@
 * 07: Mesh Data Structures
 * 08: Curve and Surface Design
 * 09: Lightning Models
-* #10: Ray Tracing
+* 10: Ray Tracing
+* #11: Fractals
 
