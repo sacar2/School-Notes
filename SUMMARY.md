@@ -7,5 +7,6 @@
 * [04: Geometric Transformations](04_geometric_transformations.md)
 * [05: Viewing and Projections](05_viewing_and_projections.md)
 * [06: Clipping](06_clipping.md)
-* #07: Mesh Data Structures
+* 07: Mesh Data Structures
+* #08: Curve and Surface Design
 
