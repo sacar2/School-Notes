@@ -26,17 +26,6 @@
 - [10: Ray Tracing](#10-ray-tracing)
 - [11: Fractals](#11-fractals)
 
-
-#01: Intro to Computer Graphics
-
-![Computer Grapgics vs Vision](cgvscv.png)
-
-**Computer Vision**: understanding image content (by creating models)
-
-**Computer Graphics**: Creating an image from scratch (using a computer model)
-
-
-
 #02: OpenGL Basics
 
 **Open GL**: 
