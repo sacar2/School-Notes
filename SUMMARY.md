@@ -8,5 +8,6 @@
 * [05: Viewing and Projections](05_viewing_and_projections.md)
 * [06: Clipping](06_clipping.md)
 * 07: Mesh Data Structures
-* #08: Curve and Surface Design
+* 08: Curve and Surface Design
+* #09: Lightning Models
 
