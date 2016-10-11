@@ -9,5 +9,5 @@
 * [06: Clipping](06_clipping.md)
 * [07: Mesh Data Structures](07_mesh_data_structures.md)
 * [08: Curve and Surface Design](08_curve_and_surface_design.md)
-* # 09: Lightning Models
+* [09: Lightning Models](09_lightning_models.md)
 
