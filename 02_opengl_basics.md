@@ -5,7 +5,7 @@
 - OS & graphics hardware independent, cross-platform
 - State Machine: put into a state/mode, it remains til you change it. Each window = it's own state
     - Event Driven Programming (call back functions, event loops, register callback functions)
-- Industry Standard (ArchitectureReview Board steers it)
+- Industry Standard (Architecture Review Board steers it)
 - Extensible
 - Can be called as an API
 
