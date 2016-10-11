@@ -1,7 +1,7 @@
 # Summary
 
 * [01: Intro to Computer Graphics](intro.md)
-   * Setting Up In XCode
+   * [Setting Up In XCode](setting_up_in_xcode.md)
 * [02: openGL Basics](README.md)
 * [03: Bresenham's Algorithms](03_bresenhams_algorithms.md)
 * [04: Geometric Transformations](04_geometric_transformations.md)
