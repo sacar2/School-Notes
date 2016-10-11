@@ -30,14 +30,15 @@
 
 ##Syntax
 ![OpenGL Function Format](functionFormat.png)
+
 - 'gl' prefixes all OpenGL
 - 'GL_' prefixes defined constants
-- Most contants are defined in gl.h, glu.h, and glut.h, '# include<glut.h>' should automatically include the others
+- Most contants are defined in gl.h, glu.h, and glut.h, `# include<glut.h>` should automatically include the others
 - Commands postfixes:
     - **number** {2, 3, 4} for number of arguments (e.g. `glVertex2i()`)
     - **letter** {i, f , d, ub} for data type of the arguments (e.g. `glRectf()`)
     - **v** if argument is a vector (array) (e.g.glVertex3fv())
-- `glColor` sets colours:
+- `glColor` Sets colours:
     - RGB or RGBA in floating pt(0-1) & unsigned byte(0-255) i.e.:
     ```c++
     glColor3f(0.0,0.5,1.0);
