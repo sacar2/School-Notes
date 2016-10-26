@@ -36,22 +36,28 @@ Done!
 # GLFW
 
 1. download GLFW & GLEW
-
 2. unzip both
-
-3. create new project 
-
+3. create new project - your base OpenGL project
 4. put GLEW & GLFW inside new project folder
-
 5. create 'build' folder inside `glfw` folder
+6. Open CMake. input GLFW location, and put output as `glfw/build` folder
+7. Open newly created GLFW project in `glfw/build`
+  1. change the scheme ALL\_BUILD to "install" 
+  2. Click the Run button.
 
-6. using CMake, input GLFW location, and put output as `glfw/build` folder
-
-7. open newly created GLFW project in `glfw/build`, and build the project
-
-8. open terminal, cd to GLEW folder, "`sudo make install`"
-
+8. Open terminal, cd to GLEW folder, "`sudo make install`"
   1. GLEW libraries are now in `glew/lib`, and GLEW include files are in `glew/include`
 
+9. Open your base OpenGL project &gt; Build Phases &gt; Link Binary w\/ libraries:
+  1. OpenGL.framework
+  2. libGLEW. ------, in `/usr/local/lib`
+  3. libglfw. -------, in ... look for it...
 
+10. Go to Build settings&gt; search paths&gt; 
+  1. HEADER search paths: \/usr\/local\/include
+  2. LIBRARY Search paths: \/usr\/local\/lib
+
+11. still under Build settings, go to Linking&gt; Other Linker Flags, add `-lGLEW`
+12. \#include &lt;GL\/glew.h&gt; 
+13. \#include &lt;GLFW\/glfw3.h&gt;
 
