@@ -60,9 +60,9 @@ Done!
   2. LIBRARY Search paths: \/usr\/local\/lib
 
 11. Still under Build settings, go to Linking&gt; Other Linker Flags, add `-lGLEW`
+
 12. \#include &lt;GL\/glew.h&gt; 
 13. \#include &lt;GLFW\/glfw3.h&gt;
-
 
 ## Adding GLFW & GLEW To Your Project
 
@@ -70,10 +70,16 @@ Done!
 2. Copy and paste GLFW & GLEW folders from base project
 3. Open your OpenGL project &gt; Build Phases &gt; Link Binary w\/ libraries: 
   1. OpenGL.framework 
-  2. libGLEW. ------, in `/usr/local/lib` 
-  3. libglfw. -------, in ... look for it...
+  2. libGLEW. ------, in `/usr/local/lib` \(the most recently created\)
+  3. libglfw. --------, in  `/usr/local/lib` \(the most recently created\)
 
-4. Go to Build settings&gt; search paths&gt; 1. HEADER search paths: \/usr\/local\/include 2. LIBRARY Search paths: \/usr\/local\/lib
+4. Go to Build settings&gt; search paths&gt; 
+
+  1. HEADER search paths: \/usr\/local\/include 
+
+  2. LIBRARY Search paths: \/usr\/local\/lib
+
+
 5. still under Build settings, go to Linking&gt; Other Linker Flags, add `-lGLEW`
 6. \#include &lt;GL\/glew.h&gt;
 7. \#include &lt;GLFW\/glfw3.h&gt;
