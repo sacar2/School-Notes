@@ -35,5 +35,12 @@ Done!
 
 # GLFW
 
+Link Frameworks:
 
+* Click on your project name then click on _Build Phases_
+* Click ‘_Link Binary With Libraries_’
+* Click the + button
+* Type _OpenGL_ in the search box, Click _OpenGL.framework_, then click _Add_
+* Click the + button again
+* Type glfw in the search box, Click GLFW_.framework_, then click _Add_
 
