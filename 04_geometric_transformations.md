@@ -2,6 +2,8 @@
 
 transformations combined by matrix multiplication
 
+![](/assets/TRANSFORMATIONS.png)
+
 ## 3D shear
 
 ![](/assets/shear.png)
