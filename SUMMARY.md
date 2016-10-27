@@ -6,4 +6,5 @@
 * [02: openGL Basics](02_opengl_basics.md)
 * [03: Bresenham's Algorithms](03_bresenhams_algorithms.md)
 * [04: Geometric Transformations](04_geometric_transformations.md)
+* [07: Mesh Data Structures](07-mesh-data-structures.md)
 
